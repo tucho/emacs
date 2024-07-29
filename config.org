@@ -16,4 +16,12 @@
   (defmacro disable (mode)
     "Call the '-mode' function with -1 as its argument, thus disabling this mode."
     `(set-mode ,mode -1))
+
+  (defun reload-config ()
+    "Reload the init.el file, thus reloading all the configuration."
+    (interactive)
+    (let ((init-file (expand-file-name "init.el"
+                                       user-emacs-directory)))
+      (load-file init-file))
+    (message "configuration reloaded"))
 #+end_src
