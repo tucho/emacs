@@ -1,2 +1,5 @@
+#+title: Marcel Campello's Emacs Configuration
+#+author: Marcel Campello
+
 #+begin_src emacs-lisp
 #+end_src
