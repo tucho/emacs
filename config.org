@@ -186,6 +186,20 @@ Org-tempo is not a separate package but a module within org that can be enabled.
   (require 'org-tempo)
 #+end_src
 
+* System integration
+
+** pinentry
+
+#+begin_src emacs-lisp
+  (use-package pinentry
+
+    :custom
+    (epg-pinentry-mode 'loopback)
+
+    :config
+    (pinentry-start))
+#+end_src
+
 * Visual
 
 ** doom & doom-modeline
