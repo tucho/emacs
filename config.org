@@ -165,3 +165,23 @@ Org-bullets gives us attractive bullets rather than asterisks.
     (org-mode . (lambda ()
                   (enable org-bullets-mode))))
 #+end_src
+
+** Source Code Block Tag Expansion
+Org-tempo is not a separate package but a module within org that can be enabled.  Org-tempo allows for '<s' followed by TAB to expand to a begin_src tag. Other expansions available include:
+
+| Typing the below + TAB | Expands to ...                         |
+|------------------------+----------------------------------------|
+| <a                     | #+begin_export ascii ... #+end_export  |
+| <c                     | #+begin_center ......... #+end_center  |
+| <C                     | #+begin_comment ........ #+end_comment |
+| <e                     | #+begin_example ........ #+end_example |
+| <E                     | #+begin_export ......... #+end_export  |
+| <h                     | #+begin_export html .... #+end_export  |
+| <l                     | #+begin_export latex ... #+end_export  |
+| <q                     | #+begin_quote .......... #+end_quote   |
+| <s                     | #+begin_src ............ #+end_src     |
+| <v                     | #+begin_verse .......... #+end_verse   |
+
+#+begin_src emacs-lisp
+  (require 'org-tempo)
+#+end_src
