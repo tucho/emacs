@@ -38,6 +38,11 @@ Remove distracting elements.
   (disable horizontal-scroll-bar-mode)
 #+end_src
 
+Font configuration.
+#+begin_src emacs-lisp
+  (add-to-list 'default-frame-alist '(font . "Hurmit Nerd Font Mono 10"))
+#+end_src
+
 Allow frames to be resized pixelwise.
 #+begin_src emacs-lisp
   (setq frame-resize-pixelwise t)
