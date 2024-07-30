@@ -243,9 +243,10 @@ Org-tempo is not a separate package but a module within org that can be enabled.
         (magit-mode-bury-buffer)
         (magit-init dir)))
 
-    :bind 
-    (("C-x g" . magit)
-     ("C-x M-g" . magit-dispatch)
-     :map magit-mode-map
-     ("R" . my-change-repo)))
+    :bind
+    (:map global-map
+          ("C-x g" . magit)
+          ("C-x M-g" . magit-dispatch))
+    (:map magit-mode-map
+          ("R" . my-change-repo)))
 #+end_src
