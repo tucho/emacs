@@ -148,3 +148,9 @@ Configure and initialize it.
   (setq org-ctrl-k-protect-subtree t)
   (setq org-src-window-setup 'current-window)
 #+end_src
+
+** Turn on automatic indentation
+
+#+begin_src emacs-lisp
+  (add-hook 'org-mode-hook #'org-indent-mode)
+#+end_src
