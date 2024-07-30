@@ -47,3 +47,15 @@ Maximize frame.
 #+begin_src emacs-lisp
   (add-to-list 'default-frame-alist '(fullscreen . maximized))
 #+end_src
+
+** Input control
+
+Use SPACE only for indentation.
+#+begin_src emacs-lisp
+  (setq-default indent-tabs-mode nil)
+#+end_src
+
+Set TAB character width.
+#+begin_src emacs-lisp
+  (setq-default tab-width 4)
+#+end_src
