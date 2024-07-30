@@ -185,3 +185,30 @@ Org-tempo is not a separate package but a module within org that can be enabled.
 #+begin_src emacs-lisp
   (require 'org-tempo)
 #+end_src
+
+* Visual
+
+** doom & doom-modeline
+
+#+begin_src emacs-lisp
+  (use-package doom-themes
+
+    :config
+    (doom-themes-visual-bell-config)
+    (doom-themes-org-config)
+    (load-theme 'doom-molokai t)
+
+    :custom
+    (doom-themes-enable-bold t)
+    (doom-themes-enable-italic t))
+
+  (use-package doom-modeline
+
+    :init
+    (enable doom-modeline-mode)
+
+    :custom
+    (doom-modeline-column-zero-based nil)
+    (doom-modeline-position-column-line-format '("L:%l-C:%c"))
+    (doom-modeline-enable-word-count t))
+#+end_src
