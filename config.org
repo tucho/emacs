@@ -24,6 +24,11 @@
                                        user-emacs-directory)))
       (load-file init-file))
     (message "configuration reloaded"))
+
+  (defun emacs-d (filename)
+    "Expand FILENAME relative to 'user-emacs-directory'."
+    (expand-file-name filename
+                      user-emacs-directory))
 #+end_src
 
 * General configuration
