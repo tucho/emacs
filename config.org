@@ -226,3 +226,26 @@ Org-tempo is not a separate package but a module within org that can be enabled.
     (doom-modeline-position-column-line-format '("L:%l-C:%c"))
     (doom-modeline-enable-word-count t))
 #+end_src
+
+* Programming
+
+** VCS
+
+*** git
+
+#+begin_src emacs-lisp
+  (use-package magit
+
+    :config
+    (defun my-change-repo ()
+      (interactive)
+      (let ((dir (magit-read-repository)))
+        (magit-mode-bury-buffer)
+        (magit-init dir)))
+
+    :bind 
+    (("C-x g" . magit)
+     ("C-x M-g" . magit-dispatch)
+     :map magit-mode-map
+     ("R" . my-change-repo)))
+#+end_src
