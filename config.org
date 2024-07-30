@@ -85,3 +85,11 @@ Set TAB character width.
 #+begin_src emacs-lisp
   (setq-default tab-width 4)
 #+end_src
+
+** Disable backup and auto-save
+
+#+begin_src emacs-lisp
+  (setq make-backup-files nil)
+  (setq auto-save-default nil)
+  (setq auto-save-list-file-prefix nil)
+#+end_src
