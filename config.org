@@ -136,3 +136,15 @@ Configure and initialize it.
   (require 'use-package-ensure)
   (setq use-package-always-ensure t)
 #+end_src
+
+* Org mode
+
+** General configuration
+
+#+begin_src emacs-lisp
+  (setq org-special-ctrl-a/e t)
+  (setq org-special-ctrl-o t)
+  (setq org-special-ctrl-k t)
+  (setq org-ctrl-k-protect-subtree t)
+  (setq org-src-window-setup 'current-window)
+#+end_src
