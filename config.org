@@ -25,3 +25,15 @@
       (load-file init-file))
     (message "configuration reloaded"))
 #+end_src
+
+* General configuration
+
+** GUI tweaking
+
+Remove distracting elements.
+#+begin_src emacs-lisp
+  (disable menu-bar-mode)
+  (disable tool-bar-mode)
+  (disable scroll-bar-mode)
+  (disable horizontal-scroll-bar-mode)
+#+end_src
