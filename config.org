@@ -69,6 +69,11 @@ Line and column numbering.
   (enable global-display-line-numbers-mode)
 #+end_src
 
+Line highlighting.
+#+begin_src emacs-lisp
+  (enable global-hl-line-mode)
+#+end_src
+
 ** Input control
 
 Use SPACE only for indentation.
