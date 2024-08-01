@@ -216,7 +216,7 @@ Org-tempo is not a separate package but a module within org that can be enabled.
     :config
     (doom-themes-visual-bell-config)
     (doom-themes-org-config)
-    (load-theme 'doom-molokai t)
+    (load-theme 'doom-dark+ t)
 
     :custom
     (doom-themes-enable-bold t)
