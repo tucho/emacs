@@ -4,3 +4,5 @@
 # but these files.
 !.gitignore
 !Readme.org
+!init.el
+!config.org
