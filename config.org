@@ -49,3 +49,13 @@ Remove distracting elements.
   (disable scroll-bar-mode)
   (disable horizontal-scroll-bar-mode)
 #+end_src
+
+Allow frames to be resized pixelwise.
+#+begin_src emacs-lisp
+  (setq frame-resize-pixelwise t)
+#+end_src
+
+Maximize frame.
+#+begin_src emacs-lisp
+  (add-to-list 'default-frame-alist '(fullscreen . maximized))
+#+end_src
