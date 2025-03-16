@@ -19,6 +19,13 @@ Macros to enable and disable modes.
     `(set-mode ,mode -1))
 #+end_src
 
+Function to expand a file contained in the Emacs configuration directory.
+#+begin_src emacs-lisp
+  (defun emacs-d (filename)
+    "Expand FILENAME relative to 'user-emacs-directory'."
+    (expand-file-name filename user-emacs-directory))
+#+end_src
+
 * Tweak user interface
 
 Do not show the startup screen.
