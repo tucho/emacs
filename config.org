@@ -59,3 +59,8 @@ Maximize frame.
 #+begin_src emacs-lisp
   (add-to-list 'default-frame-alist '(fullscreen . maximized))
 #+end_src
+
+Tooltips config.
+#+begin_src emacs-lisp
+  (setq use-system-tooltips nil)
+#+end_src
