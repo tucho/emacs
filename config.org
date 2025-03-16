@@ -41,3 +41,11 @@ Do not show the startup screen.
 #+begin_src emacs-lisp
   (setq inhibit-startup-screen t)
 #+end_src
+
+Remove distracting elements.
+#+begin_src emacs-lisp
+  (disable menu-bar-mode)
+  (disable tool-bar-mode)
+  (disable scroll-bar-mode)
+  (disable horizontal-scroll-bar-mode)
+#+end_src
