@@ -26,6 +26,15 @@ Function to expand a file contained in the Emacs configuration directory.
     (expand-file-name filename user-emacs-directory))
 #+end_src
 
+Function to reload the entire Emacs configuration.
+#+begin_src emacs-lisp
+  (defun reload-emacs-config ()
+    "Reload the init.el file, thus 'rerunnig' all the configuration."
+    (interactive)
+    (load-file (emacs-d "init.el"))
+    (message "configuration reloaded"))
+#+end_src
+
 * Tweak user interface
 
 Do not show the startup screen.
