@@ -1,6 +1,24 @@
 #+title: Tucho's Emacs configuration
 #+author: Tucho (Marcel Campello)
 
+* Ancillary macros and functions
+
+Macros to enable and disable modes.
+#+begin_src emacs-lisp
+  (defmacro set-mode (mode value)
+    "Call a '-mode' function with 'value' as its argument, if this function exists."
+    `(when (fboundp ',mode)
+       (funcall ',mode ,value)))
+
+  (defmacro enable (mode)
+    "Call the '-mode' function with 1 as its argument, thus enabling this mode."
+    `(set-mode ,mode 1))
+
+  (defmacro disable (mode)
+    "Call the '-mode' function with -1 as its argument, thus disabling this mode."
+    `(set-mode ,mode -1))
+#+end_src
+
 * Tweak user interface
 
 Do not show the startup screen.
