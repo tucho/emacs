@@ -124,3 +124,11 @@ Make the scratch buffer unkillable.
 
   (add-hook 'kill-buffer-query-functions 'dont-kill-but-bury-scratch)
 #+end_src
+
+* Configure indentation and tabulation
+
+Make indentation space-only and tabulation 4-space wide.
+#+begin_src emacs-lisp
+  (setq-default indent-tabs-mode nil)
+  (setq-default tab-width 4)
+#+end_src
