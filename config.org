@@ -78,3 +78,9 @@ Highlight the current line.
 #+begin_src emacs-lisp
   (enable global-hl-line-mode)
 #+end_src
+
+Show line numbers.
+#+begin_src emacs-lisp
+  (setq display-line-numbers-width-start t)
+  (enable global-display-line-numbers-mode)
+#+end_src
