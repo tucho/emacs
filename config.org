@@ -180,7 +180,7 @@ Require and configure ~use-package~. Enable ~always-ensure~ feature.
   (use-package use-package
 
     :config
-    (use-package use-package-ensure)
+    (require 'use-package-ensure)
 
     :custom
     (use-package-always-ensure t))
