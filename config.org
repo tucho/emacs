@@ -91,3 +91,11 @@ Configure mode line to show point's current line and column numbers.
   (enable line-number-mode)
   (enable column-number-mode)
 #+end_src
+
+* Disable auto-save and backup
+
+Disable auto-save (those like #filename#)
+#+begin_src emacs-lisp
+  (setq auto-save-default nil)
+  (setq auto-save-list-file-prefix nil)
+#+end_src
