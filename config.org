@@ -104,3 +104,23 @@ Disable backup files (those like filename~).
 #+begin_src emacs-lisp
   (setq make-backup-files nil)
 #+end_src
+
+* Tweak ~*scratch*~ buffer
+
+Start with a clean the scratch buffer.
+#+begin_src emacs-lisp
+  (setq initial-scratch-message nil)
+#+end_src
+
+Make the scratch buffer unkillable.
+#+begin_src emacs-lisp
+  (defun dont-kill-but-bury-scratch ()
+    (if (equal (buffer-name (current-buffer))
+               "*scratch*")
+        (progn
+          (bury-buffer)
+          nil)
+      t))
+
+  (add-hook 'kill-buffer-query-functions 'dont-kill-but-bury-scratch)
+#+end_src
