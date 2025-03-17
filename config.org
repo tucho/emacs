@@ -60,6 +60,13 @@ Maximize frame.
   (add-to-list 'default-frame-alist '(fullscreen . maximized))
 #+end_src
 
+Configure fonts.
+#+begin_src emacs-lisp
+  (set-face-attribute 'default nil
+                      :family "Hurmit Nerd Font Mono"
+                      :height 100)
+#+end_src
+
 Tooltips config.
 #+begin_src emacs-lisp
   (setq use-system-tooltips nil)
