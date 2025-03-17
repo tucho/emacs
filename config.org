@@ -71,3 +71,10 @@ Tooltips config.
 #+begin_src emacs-lisp
   (setq use-system-tooltips nil)
 #+end_src
+
+* Line numbering and highlighting
+
+Highlight the current line.
+#+begin_src emacs-lisp
+  (enable global-hl-line-mode)
+#+end_src
