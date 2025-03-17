@@ -132,3 +132,15 @@ Make indentation space-only and tabulation 4-space wide.
   (setq-default indent-tabs-mode nil)
   (setq-default tab-width 4)
 #+end_src
+
+* Set coding system
+
+Set UTF-8 as the coding system for:
+- newly created buffers;
+- subprocess I/O;
+- file names;
+- terminal;
+- keyboard.
+#+begin_src emacs-lisp
+  (set-default-coding-systems 'utf-8)
+#+end_src
