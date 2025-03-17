@@ -87,7 +87,6 @@ Show line numbers.
 
 Configure mode line to show point's current line and column numbers.
 #+begin_src emacs-lisp
-  (setq mode-line-position-column-line-format '(" %l,%C" ))
   (enable line-number-mode)
   (enable column-number-mode)
 #+end_src
@@ -190,4 +189,34 @@ Require and configure ~use-package~. Enable ~always-ensure~ feature.
 Install ~bind-key~ (needed to use the ~:bind~ keyword in ~use-package~).
 #+begin_src emacs-lisp
   (use-package bind-key)
+#+end_src
+
+* Theming
+
+** doom themes
+
+#+begin_src emacs-lisp
+  (use-package doom-themes
+
+    :config
+    (doom-themes-visual-bell-config)
+    (load-theme 'doom-molokai)
+
+    :custom
+    (doom-themes-enable-bold t)
+    (doom-themes-enable-italic t))
+#+end_src
+
+**  doom modeline
+
+#+begin_src emacs-lisp
+  (use-package doom-modeline
+
+    :init
+    (enable doom-modeline-mode)
+
+    :custom
+    (doom-modeline-column-zero-based nil)
+    (doom-modeline-position-column-line-format '(" (%l,%c) "))
+    (doom-modeline-enable-word-count t))
 #+end_src
