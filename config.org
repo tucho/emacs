@@ -179,16 +179,24 @@ Require and configure ~use-package~. Enable ~always-ensure~ feature.
 
   (use-package use-package
 
-    :config
-    (require 'use-package-ensure)
+    :ensure nil)
+
+  (use-package use-package-ensure
+
+    :ensure nil
+
+    :after use-package
 
     :custom
     (use-package-always-ensure t))
 #+end_src
 
-Install ~bind-key~ (needed to use the ~:bind~ keyword in ~use-package~).
+Configure ~bind-key~ (needed to use the ~:bind~ keyword in ~use-package~).
 #+begin_src emacs-lisp
-  (use-package bind-key)
+  (use-package bind-key
+
+    :ensure nil)
+#+end_src
 #+end_src
 
 * Theming
