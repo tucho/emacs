@@ -220,3 +220,15 @@ Install ~bind-key~ (needed to use the ~:bind~ keyword in ~use-package~).
     (doom-modeline-position-column-line-format '(" (%l,%c) "))
     (doom-modeline-enable-word-count t))
 #+end_src
+
+* VCS
+
+** git
+
+#+begin_src emacs-lisp
+  (use-package magit
+
+    :bind
+    ("C-x g" . magit)
+    ("C-x M-g" . magit-dispatch))
+#+end_src
