@@ -25,6 +25,8 @@
   - [[git][git]]
 - [[Usability][Usability]]
   - [[which-key][which-key]]
+- [[System integration][System integration]]
+  - [[pinentry][pinentry]]
 
 * Ancillary macros and functions
 
@@ -356,4 +358,18 @@ org-bullets gives us attractive bullets rather than asterisks.
 
     :bind
     ("C-c C-SPC" . which-key-show-top-level))
+#+end_src
+
+* System integration
+
+** pinentry
+
+#+begin_src emacs-lisp
+  (use-package pinentry
+
+    :custom
+    (epg-pinentry-mode 'loopback)
+
+    :config
+    (pinentry-start))
 #+end_src
