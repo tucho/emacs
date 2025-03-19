@@ -224,7 +224,7 @@ Configure ~bind-key~ (needed to use the ~:bind~ keyword in ~use-package~).
     (org-ctrl-k-protect-subtree t))
 #+end_src
 
-** Enabling org bullets
+** Enable org bullets
 
 org-bullets gives us attractive bullets rather than asterisks.
 #+begin_src emacs-lisp
