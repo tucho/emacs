@@ -224,6 +224,17 @@ Configure ~bind-key~ (needed to use the ~:bind~ keyword in ~use-package~).
     (org-ctrl-k-protect-subtree t))
 #+end_src
 
+** Enabling org bullets
+
+org-bullets gives us attractive bullets rather than asterisks.
+#+begin_src emacs-lisp
+  (use-package org-bullets
+
+    :hook
+    (org-mode . (lambda ()
+                  (enable org-bullets-mode))))
+#+end_src
+
 * Theming
 
 ** doom themes
