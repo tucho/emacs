@@ -1,6 +1,31 @@
 #+title: Tucho's Emacs configuration
 #+author: Tucho (Marcel Campello)
 
+* Table of contents :toc_4_org:
+- [[Ancillary macros and functions][Ancillary macros and functions]]
+- [[Tweak user interface][Tweak user interface]]
+- [[Line numbering and highlighting][Line numbering and highlighting]]
+- [[Text manipulation][Text manipulation]]
+- [[Disable auto-save and backup][Disable auto-save and backup]]
+- [[Tweak *scratch* buffer][Tweak *scratch* buffer]]
+- [[Configure indentation and tabulation][Configure indentation and tabulation]]
+- [[Set coding system][Set coding system]]
+- [[Configure package and use-package][Configure package and use-package]]
+  - [[Configure package][Configure package]]
+  - [[Configure use-package][Configure use-package]]
+- [[Org mode][Org mode]]
+  - [[General configurattion][General configurattion]]
+  - [[Source code block tag expansion][Source code block tag expansion]]
+  - [[Enable org bullets][Enable org bullets]]
+  - [[Generate table of contents][Generate table of contents]]
+- [[Theming][Theming]]
+  - [[doom themes][doom themes]]
+  - [[doom modeline][doom modeline]]
+- [[VCS][VCS]]
+  - [[git][git]]
+- [[Usability][Usability]]
+  - [[which-key][which-key]]
+
 * Ancillary macros and functions
 
 Macros to enable and disable modes.
@@ -111,7 +136,7 @@ Disable backup files (those like filename~).
   (setq make-backup-files nil)
 #+end_src
 
-* Tweak ~*scratch*~ buffer
+* Tweak *scratch* buffer
 
 Start with a clean the scratch buffer.
 #+begin_src emacs-lisp
@@ -151,11 +176,11 @@ Set UTF-8 as the coding system for:
   (set-default-coding-systems 'utf-8)
 #+end_src
 
-* Configure ~package~ and ~use-package~
+* Configure package and use-package
 
 I am going to use ~package~ as the package manager and ~use-package~ for package configuration.
 
-** Configure ~package~
+** Configure package
 
 Require ~package~.
 #+begin_src emacs-lisp
@@ -177,7 +202,7 @@ Configure archives.
                                      ("gnu" . 10)))
 #+end_src
 
-** Configure ~use-package~
+** Configure use-package
 
 Require and configure ~use-package~. Enable ~always-ensure~ feature.
 #+begin_src emacs-lisp
@@ -258,6 +283,14 @@ org-bullets gives us attractive bullets rather than asterisks.
     :hook
     (org-mode . (lambda ()
                   (enable org-bullets-mode))))
+#+end_src
+
+** Generate table of contents
+#+begin_src emacs-lisp
+  (use-package toc-org
+
+    :hook
+    (org-mode . toc-org-enable))
 #+end_src
 
 * Theming
