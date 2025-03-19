@@ -91,6 +91,13 @@ Configure mode line to show point's current line and column numbers.
   (enable column-number-mode)
 #+end_src
 
+* Text manipulation
+
+Enable visual line mode globally ("break" long logical lines into two or more screen lines).
+#+begin_src emacs-lisp
+  (enable global-visual-line-mode)
+#+end_src
+
 * Disable auto-save and backup
 
 Disable auto-save files (those like #filename#).
