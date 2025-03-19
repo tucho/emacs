@@ -218,7 +218,10 @@ Configure ~bind-key~ (needed to use the ~:bind~ keyword in ~use-package~).
     (org-mode . org-indent-mode)
 
     :custom
-    (org-src-window-setup 'current-window))
+    (org-src-window-setup 'current-window)
+    (org-special-ctrl-a/e t)
+    (org-special-ctrl-k t)
+    (org-ctrl-k-protect-subtree t))
 #+end_src
 
 * Theming
