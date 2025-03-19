@@ -207,10 +207,15 @@ Configure ~bind-key~ (needed to use the ~:bind~ keyword in ~use-package~).
 
 * Org mode
 
+** General configurattion
+
 #+begin_src emacs-lisp
   (use-package org
 
     :ensure nil
+
+    :hook
+    (org-mode . org-indent-mode)
 
     :custom
     (org-src-window-setup 'current-window))
