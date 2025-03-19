@@ -197,6 +197,16 @@ Configure ~bind-key~ (needed to use the ~:bind~ keyword in ~use-package~).
 
     :ensure nil)
 #+end_src
+
+* Org mode
+
+#+begin_src emacs-lisp
+  (use-package org
+
+    :ensure nil
+
+    :custom
+    (org-src-window-setup 'current-window))
 #+end_src
 
 * Theming
