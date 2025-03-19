@@ -26,6 +26,7 @@
 - [[Usability][Usability]]
   - [[which-key][which-key]]
 - [[System integration][System integration]]
+  - [[exec-path-from-shell][exec-path-from-shell]]
   - [[pinentry][pinentry]]
 
 * Ancillary macros and functions
@@ -361,6 +362,15 @@ org-bullets gives us attractive bullets rather than asterisks.
 #+end_src
 
 * System integration
+
+** exec-path-from-shell
+
+#+begin_src emacs-lisp
+  (use-package exec-path-from-shell
+
+    :config
+    (exec-path-from-shell-initialize))
+#+end_src
 
 ** pinentry
 
