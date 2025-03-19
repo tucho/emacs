@@ -28,6 +28,7 @@
 - [[System integration][System integration]]
   - [[exec-path-from-shell][exec-path-from-shell]]
   - [[pinentry][pinentry]]
+  - [[direnv][direnv]]
 
 * Ancillary macros and functions
 
@@ -382,4 +383,13 @@ org-bullets gives us attractive bullets rather than asterisks.
 
     :config
     (pinentry-start))
+#+end_src
+
+** direnv
+
+#+begin_src emacs-lisp
+  (use-package direnv
+
+    :config
+    (enable direnv-mode))
 #+end_src
