@@ -251,7 +251,7 @@ org-bullets gives us attractive bullets rather than asterisks.
     (doom-themes-enable-italic t))
 #+end_src
 
-**  doom modeline
+** doom modeline
 
 #+begin_src emacs-lisp
   (use-package doom-modeline
