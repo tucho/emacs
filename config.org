@@ -32,6 +32,7 @@
 - [[Programming][Programming]]
   - [[Code formatting][Code formatting]]
     - [[smartparens][smartparens]]
+    - [[aggressive-indent][aggressive-indent]]
 
 * Ancillary macros and functions
 
@@ -462,4 +463,13 @@ org-bullets gives us attractive bullets rather than asterisks.
           ("C-S-<backspace>" . sp-backward-delete-symbol)
           ("C-S-<delete>" . sp-delete-symbol)
           ("C-S-d" . sp-delete-symbol)))
+#+end_src
+
+*** aggressive-indent
+
+#+begin_src emacs-lisp
+  (use-package aggressive-indent
+
+    :hook
+    (prog-mode . aggressive-indent-mode))
 #+end_src
