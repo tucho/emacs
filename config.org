@@ -21,14 +21,14 @@
 - [[Theming][Theming]]
   - [[doom themes][doom themes]]
   - [[doom modeline][doom modeline]]
-- [[VCS][VCS]]
-  - [[git][git]]
 - [[Usability][Usability]]
   - [[which-key][which-key]]
 - [[System integration][System integration]]
   - [[exec-path-from-shell][exec-path-from-shell]]
   - [[pinentry][pinentry]]
   - [[direnv][direnv]]
+- [[Version control][Version control]]
+  - [[git][git]]
 - [[Programming][Programming]]
   - [[Code formatting][Code formatting]]
     - [[smartparens][smartparens]]
@@ -332,18 +332,6 @@ org-bullets gives us attractive bullets rather than asterisks.
     (doom-modeline-enable-word-count t))
 #+end_src
 
-* VCS
-
-** git
-
-#+begin_src emacs-lisp
-  (use-package magit
-
-    :bind
-    ("C-x g" . magit)
-    ("C-x M-g" . magit-dispatch))
-#+end_src
-
 * Usability
 
 ** which-key
@@ -397,6 +385,18 @@ org-bullets gives us attractive bullets rather than asterisks.
 
     :config
     (enable direnv-mode))
+#+end_src
+
+* Version control
+
+** git
+
+#+begin_src emacs-lisp
+  (use-package magit
+
+    :bind
+    ("C-x g" . magit)
+    ("C-x M-g" . magit-dispatch))
 #+end_src
 
 * Programming
