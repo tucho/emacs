@@ -33,6 +33,7 @@
   - [[Code formatting][Code formatting]]
     - [[smartparens][smartparens]]
     - [[aggressive-indent][aggressive-indent]]
+    - [[rainbow-delimitters][rainbow-delimitters]]
 
 * Ancillary macros and functions
 
@@ -472,4 +473,13 @@ org-bullets gives us attractive bullets rather than asterisks.
 
     :hook
     (prog-mode . aggressive-indent-mode))
+#+end_src
+
+*** rainbow-delimitters
+
+#+begin_src emacs-lisp
+  (use-package rainbow-delimiters
+
+    :hook
+    (prog-mode . rainbow-delimiters-mode))
 #+end_src
