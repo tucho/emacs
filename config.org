@@ -29,6 +29,9 @@
   - [[exec-path-from-shell][exec-path-from-shell]]
   - [[pinentry][pinentry]]
   - [[direnv][direnv]]
+- [[Programming][Programming]]
+  - [[Code formatting][Code formatting]]
+    - [[smartparens][smartparens]]
 
 * Ancillary macros and functions
 
@@ -392,4 +395,69 @@ org-bullets gives us attractive bullets rather than asterisks.
 
     :config
     (enable direnv-mode))
+#+end_src
+
+* Programming
+
+** Code formatting
+
+*** smartparens
+
+#+begin_src emacs-lisp
+  (use-package smartparens
+
+    :hook
+    (prog-mode . smartparens-strict-mode)
+
+    :config
+    (require 'smartparens-config)
+
+    :bind
+    (:map smartparens-mode-map
+          ("C-M-f" . sp-forward-sexp)
+          ("C-M-b" . sp-backward-sexp)
+
+          ("C-M-n" . sp-beginning-of-next-sexp)
+          ("C-M-S-n" . sp-end-of-next-sexp)
+          ("C-M-p" . sp-beginning-of-previous-sexp)
+          ("C-M-S-p" . sp-end-of-previous-sexp)
+
+          ("C-M-a" . sp-beginning-of-sexp)
+          ("C-M-e" . sp-end-of-sexp)
+
+          ("C-M-<down>" . sp-down-sexp)
+          ("C-M-S-<down>" . sp-backward-down-sexp)
+
+          ("C-M-<up>" . sp-backward-up-sexp)
+          ("C-M-S-<up>" . sp-up-sexp)
+
+          ("C-M-<space>" . sp-mark-sexp)
+
+          ("C-M-<right>" . sp-forward-slurp-sexp)
+          ("C-M-<left>" . sp-backward-slurp-sexp)
+
+          ("C-M-S-<right>" . sp-backward-barf-sexp)
+          ("C-M-S-<left>" . sp-forward-barf-sexp)
+
+          ("C-M-]" . sp-unwrap-sexp)
+          ("C-M-[" . sp-backward-unwrap-sexp)
+          ("C-M-r" . sp-rewrap-sexp)
+
+          ("C-M-j" . sp-join-sexp)
+          ("C-M-s" . sp-split-sexp)
+
+          ("C-M-t" . sp-transpose-sexp)
+
+          ("C-M-k" . sp-kill-sexp)
+          ("C-M-w" . sp-copy-sexp)
+          ("C-M-<backspace>" . sp-backward-delete-sexp)
+          ("C-M-<delete>" . sp-delete-sexp)
+          ("C-M-d" . sp-delete-sexp)
+
+          ("C-S-f" . sp-forward-symbol)
+          ("C-S-b" . sp-backward-symbol)
+          ("C-S-k" . sp-kill-symbol)
+          ("C-S-<backspace>" . sp-backward-delete-symbol)
+          ("C-S-<delete>" . sp-delete-symbol)
+          ("C-S-d" . sp-delete-symbol)))
 #+end_src
