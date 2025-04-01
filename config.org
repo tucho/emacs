@@ -33,6 +33,7 @@
   - [[orderless][orderless]]
   - [[marginalia][marginalia]]
   - [[consult][consult]]
+  - [[corfu][corfu]]
 - [[Version control][Version control]]
   - [[git][git]]
 - [[Programming][Programming]]
@@ -479,6 +480,25 @@ org-bullets gives us attractive bullets rather than asterisks.
     (:map minibuffer-local-map
           ("M-s" . consult-history)
           ("M-r" . consult-history)))
+#+end_src
+
+** corfu
+
+#+begin_src emacs-lisp
+  (use-package corfu
+
+    :custom
+    (corfu-cycle t)
+    (corfu-preselect 'prompt)
+    (tab-always-indent 'complete)
+
+    :bind
+    (:map corfu-map
+          ("TAB" . corfu-next)
+          ("S-TAB" . corfu-previous))
+
+    :init
+    (global-corfu-mode))
 #+end_src
 
 * Version control
