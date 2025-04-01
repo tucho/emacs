@@ -28,6 +28,11 @@
   - [[exec-path-from-shell][exec-path-from-shell]]
   - [[pinentry][pinentry]]
   - [[direnv][direnv]]
+- [[Search and completion][Search and completion]]
+  - [[vertico][vertico]]
+  - [[orderless][orderless]]
+  - [[marginalia][marginalia]]
+  - [[consult][consult]]
 - [[Version control][Version control]]
   - [[git][git]]
 - [[Programming][Programming]]
@@ -404,6 +409,76 @@ org-bullets gives us attractive bullets rather than asterisks.
 
     :config
     (enable direnv-mode))
+#+end_src
+
+* Search and completion
+
+** vertico
+
+#+begin_src emacs-lisp
+  (use-package vertico
+
+    :init
+    (enable vertico-mode)
+
+    :hook
+    (rfn-eshadow-update-overlay . vertico-directory-tidy)
+
+    :bind
+    (:map vertico-map
+          ("TAB" . minibuffer-complete)
+          ("C-<backspace>" . vertico-directory-delete-word)
+          ("M-<backspace>" . vertico-directory-delete-word)))
+#+end_src
+
+** orderless
+
+#+begin_src emacs-lisp
+  (use-package orderless
+
+    :custom
+    (completion-styles '(orderless basic))
+    (completion-category-overrides '((file (styles basic partial-completion)))))
+#+end_src
+
+** marginalia
+
+#+begin_src emacs-lisp
+  (use-package marginalia
+
+    :custom
+    (marginalia-max-relative-age 0)
+
+    :config
+    (enable marginalia-mode))
+#+end_src
+
+** consult
+
+#+begin_src emacs-lisp
+  (use-package consult
+
+    :bind
+    ("C-c M-x" . consult-mode-command)
+    ("C-c h" . consult-history)
+
+    ("C-x b" . consult-buffer)
+    ("C-x 4 b" . consult-buffer-other-window)
+    ("C-x 5 b" . consult-buffer-other-frame)
+
+    ("M-y" . consult-yank-pop)
+
+    ("M-g g" . consult-goto-line)
+    ("M-g M-g" . consult-goto-line)
+    ("M-g o" . consult-outline)
+
+    ("M-s l" . consult-line)
+    ("M-s k" . consult-keep-lines)
+    ("M-s u" . consult-focus-lines)
+
+    :map minibuffer-local-map
+    ("M-s" . consult-history)
+    ("M-r" . consult-history))
 #+end_src
 
 * Version control
