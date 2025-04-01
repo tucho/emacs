@@ -510,6 +510,16 @@ org-bullets gives us attractive bullets rather than asterisks.
 
     :init
     (global-corfu-mode))
+
+
+  (use-package  nerd-icons-corfu
+
+    :after
+    nerd-icons
+    corfu
+
+    :config
+    (add-to-list 'corfu-margin-formatters #'nerd-icons-corfu-formatter))
 #+end_src
 
 * Version control
