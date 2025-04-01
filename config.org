@@ -8,6 +8,7 @@
 - [[Text manipulation][Text manipulation]]
 - [[Disable auto-save and backup][Disable auto-save and backup]]
 - [[Tweak *scratch* buffer][Tweak *scratch* buffer]]
+- [[Minibuffer][Minibuffer]]
 - [[Configure indentation and tabulation][Configure indentation and tabulation]]
 - [[Set coding system][Set coding system]]
 - [[Configure package and use-package][Configure package and use-package]]
@@ -163,6 +164,24 @@ Make the scratch buffer unkillable.
       t))
 
   (add-hook 'kill-buffer-query-functions 'dont-kill-but-bury-scratch)
+#+end_src
+
+* Minibuffer
+
+Support opening new minibuffers from inside existing minibuffers.
+#+begin_src emacs-lisp
+  (setq enable-recursive-minibuffers t)
+#+end_src
+
+Hide commands in M-x which do not work in the current mode.
+#+begin_src emacs-lisp
+  (setq read-extended-command-predicate #'command-completion-default-include-p)
+#+end_src
+
+Do not allow the cursor in the minibuffer prompt
+#+begin_src emacs-lisp
+  (setq minibuffer-prompt-properties
+        '(read-only t cursor-intangible t face minibuffer-prompt))
 #+end_src
 
 * Configure indentation and tabulation
