@@ -35,6 +35,8 @@
   - [[marginalia][marginalia]]
   - [[consult][consult]]
   - [[corfu][corfu]]
+- [[Project/workspace management and navigation][Project/workspace management and navigation]]
+  - [[treemacs][treemacs]]
 - [[Version control][Version control]]
   - [[git][git]]
 - [[Programming][Programming]]
@@ -535,6 +537,20 @@ org-bullets gives us attractive bullets rather than asterisks.
 
     :config
     (add-to-list 'corfu-margin-formatters #'nerd-icons-corfu-formatter))
+#+end_src
+
+* Project/workspace management and navigation
+
+** treemacs
+
+#+begin_src emacs-lisp
+  (use-package treemacs
+
+    :custom
+    (treemacs-is-never-other-window t)
+
+    :bind
+    ("M-0" . treemacs-select-window))
 #+end_src
 
 * Version control
