@@ -22,6 +22,7 @@
 - [[Theming][Theming]]
   - [[doom themes][doom themes]]
   - [[doom modeline][doom modeline]]
+  - [[nerd-icons][nerd-icons]]
 - [[Usability][Usability]]
   - [[which-key][which-key]]
 - [[System integration][System integration]]
@@ -355,6 +356,16 @@ org-bullets gives us attractive bullets rather than asterisks.
     (doom-modeline-column-zero-based nil)
     (doom-modeline-position-column-line-format '(" (%l,%c) "))
     (doom-modeline-enable-word-count t))
+#+end_src
+
+** nerd-icons
+
+#+begin_src emacs-lisp
+  (use-package nerd-icons
+
+    :init
+    (unless (find-font (font-spec :family "Symbols Nerd Font Mono"))
+      (nerd-icons-install-fonts t)))
 #+end_src
 
 * Usability
