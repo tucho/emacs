@@ -252,7 +252,8 @@ Require and configure ~use-package~. Enable ~always-ensure~ feature.
 
     :ensure nil
 
-    :after use-package
+    :after
+    (use-package)
 
     :custom
     (use-package-always-ensure t))
@@ -306,7 +307,8 @@ org-tempo is not a separate package but a module within org that can be enabled.
 
     :ensure nil
 
-    :after org)
+    :after
+    (org))
 #+end_src
 
 ** Enable org bullets
@@ -468,8 +470,8 @@ org-bullets gives us attractive bullets rather than asterisks.
   (use-package nerd-icons-completion
 
     :after
-    nerd-icons
-    marginalia
+    (nerd-icons
+     marginalia)
 
     :hook
     (marginalia-mode . nerd-icons-completion-marginalia-setup)
@@ -528,8 +530,8 @@ org-bullets gives us attractive bullets rather than asterisks.
   (use-package  nerd-icons-corfu
 
     :after
-    nerd-icons
-    corfu
+    (nerd-icons
+     corfu)
 
     :config
     (add-to-list 'corfu-margin-formatters #'nerd-icons-corfu-formatter))
