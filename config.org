@@ -476,9 +476,9 @@ org-bullets gives us attractive bullets rather than asterisks.
     ("M-s k" . consult-keep-lines)
     ("M-s u" . consult-focus-lines)
 
-    :map minibuffer-local-map
-    ("M-s" . consult-history)
-    ("M-r" . consult-history))
+    (:map minibuffer-local-map
+          ("M-s" . consult-history)
+          ("M-r" . consult-history)))
 #+end_src
 
 * Version control
