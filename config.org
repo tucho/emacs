@@ -342,11 +342,12 @@ org-bullets gives us attractive bullets rather than asterisks.
 
     :config
     (doom-themes-visual-bell-config)
-    (load-theme 'doom-molokai)
+    (load-theme 'doom-gruvbox)
 
     :custom
     (doom-themes-enable-bold t)
-    (doom-themes-enable-italic t))
+    (doom-themes-enable-italic t)
+    (doom-gruvbox-dark-variant "hard"))
 #+end_src
 
 ** doom modeline
