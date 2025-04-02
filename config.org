@@ -465,7 +465,7 @@ org-bullets gives us attractive bullets rather than asterisks.
     :custom
     (marginalia-max-relative-age 0)
 
-    :config
+    :init
     (enable marginalia-mode))
 
 
