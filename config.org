@@ -320,8 +320,7 @@ org-bullets gives us attractive bullets rather than asterisks.
   (use-package org-bullets
 
     :hook
-    (org-mode . (lambda ()
-                  (enable org-bullets-mode))))
+    (org-mode . org-bullets-mode))
 #+end_src
 
 ** Generate table of contents
