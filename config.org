@@ -558,6 +558,12 @@ org-bullets gives us attractive bullets rather than asterisks.
 
     :config
     (treemacs-load-theme "nerd-icons"))
+
+
+  (use-package treemacs-icons-dired
+
+    :hook
+    (dired-mode . treemacs-icons-dired-enable-once))
 #+end_src
 
 * Version control
