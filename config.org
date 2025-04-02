@@ -475,9 +475,6 @@ org-bullets gives us attractive bullets rather than asterisks.
     (nerd-icons
      marginalia)
 
-    :hook
-    (marginalia-mode . nerd-icons-completion-marginalia-setup)
-
     :config
     (nerd-icons-completion-mode))
 #+end_src
