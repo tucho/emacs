@@ -44,6 +44,8 @@
     - [[smartparens][smartparens]]
     - [[aggressive-indent][aggressive-indent]]
     - [[rainbow-delimitters][rainbow-delimitters]]
+  - [[Syntax checking][Syntax checking]]
+    - [[flycheck][flycheck]]
 
 * Ancillary macros and functions
 
@@ -671,4 +673,15 @@ org-bullets gives us attractive bullets rather than asterisks.
 
     :hook
     (prog-mode . rainbow-delimiters-mode))
+#+end_src
+
+** Syntax checking
+
+*** flycheck
+
+#+begin_src emacs-lisp
+  (use-package flycheck
+
+    :init
+    (enable global-flycheck-mode))
 #+end_src
