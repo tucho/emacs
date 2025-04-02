@@ -106,8 +106,10 @@ Maximize frame.
 
 Configure fonts.
 #+begin_src emacs-lisp
+  (setq unified-font-family "Hurmit Nerd Font")
+
   (set-face-attribute 'default nil
-                      :family "Hurmit Nerd Font Mono"
+                      :family "Hurmit Nerd Font"
                       :height 100)
 #+end_src
 
@@ -367,8 +369,11 @@ org-bullets gives us attractive bullets rather than asterisks.
   (use-package nerd-icons
 
     :init
-    (unless (find-font (font-spec :family "Symbols Nerd Font Mono"))
-      (nerd-icons-install-fonts t)))
+    (unless (find-font (font-spec :family unified-font-family))
+      (nerd-icons-install-fonts t))
+
+    :custom
+    (nerd-icons-font-family unified-font-family))
 #+end_src
 
 * Usability
