@@ -48,6 +48,8 @@
   - [[Syntax checking][Syntax checking]]
     - [[flycheck][flycheck]]
   - [[Language server protocol][Language server protocol]]
+  - [[Languages][Languages]]
+    - [[Clojure][Clojure]]
 
 * Ancillary macros and functions
 
@@ -766,4 +768,83 @@ org-bullets gives us attractive bullets rather than asterisks.
     (enable dap-ui-mode)
     (enable dap-ui-controls-mode)
     (enable dap-auto-configure-mode))
+#+end_src
+
+** Languages
+
+*** Clojure
+
+#+begin_src emacs-lisp
+  (use-package clojure-mode
+
+    :hook
+    (clojure-mode . lsp)
+    (clojurescript-mode . lsp)
+    (clojurec-mode . lsp))
+
+
+  (use-package cider
+
+    :after
+    (clojure-mode)
+
+    :config
+    (add-to-list 'auto-mode-alist '("\\.repl\\'" . clojure-mode))
+
+    :hook
+    (clojure-mode . cider-mode)
+    (cider-mode . cider-enable-flex-completion)
+    (before-save . (lambda ()
+                     (clojure-sort-ns)
+                     (cider-format-buffer)))
+    (cider-mode . turn-on-smartparens-strict-mode)
+    (cider-repl-mode . turn-on-smartparens-strict-mode)
+    (eval-expression-minibuffer-setup . eldoc-mode)
+    (eval-expression-minibuffer-setup . turn-on-smartparens-strict-mode)
+
+    :custom
+    (cider-enrich-classpath t)
+    (cider-save-file-on-load t)
+    (nrepl-log-messages t)
+    (cider-special-mode-truncate-lines nil)
+    (cider-font-lock-dynamically '(macro core function var deprecated))
+    (cider-eldoc-display-context-dependent-info t)
+    (cider-print-fn 'puget)
+    (cider-overlays-use-font-lock t)
+    (cider-repl-history-file (expand-file-name ".cider-repl-history" "~"))
+
+    :bind
+    (:map cider-repl-mode-map
+          ("<return>" . cider-repl-newline-and-indent)
+          ("C-<return>" . cider-repl-return)))
+
+
+  (use-package flycheck-clojure
+
+    :after
+    (flycheck
+     cider)
+
+    :commands
+    (flycheck-clojure-setup)
+
+    :hook
+    (after-init . global-flycheck-mode)
+    (cider-mode . (lambda ()
+                    (setq next-error-function #'flycheck-next-error-function))))
+
+
+  (use-package clj-refactor
+
+    :after
+    (clojure-mode)
+
+    :hook
+    (clojure-mode . clj-refactor-mode))
+
+
+  (use-package hugsql-ghosts
+
+    :hook
+    (cider-mode . hugsql-ghosts-install))
 #+end_src
