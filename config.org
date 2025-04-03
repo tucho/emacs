@@ -47,6 +47,7 @@
     - [[rainbow-delimitters][rainbow-delimitters]]
   - [[Syntax checking][Syntax checking]]
     - [[flycheck][flycheck]]
+  - [[Language server protocol][Language server protocol]]
 
 * Ancillary macros and functions
 
@@ -709,4 +710,60 @@ org-bullets gives us attractive bullets rather than asterisks.
 
     :init
     (enable global-flycheck-mode))
+#+end_src
+
+** Language server protocol
+
+#+begin_src emacs-lisp
+  (use-package lsp-mode
+
+    :after
+    (direnv)
+
+    :init
+    (setq lsp-keymap-prefix "C-c l")
+
+    :config
+    (advice-add 'lsp :before #'direnv-update-environment)
+
+    :hook
+    (lsp-mode . lsp-enable-which-key-integration)
+
+    :commands lsp)
+
+
+  (use-package lsp-ui
+
+    :after
+    (lsp-mode)
+
+    :bind
+    ([remap xref-find-definitions] . lsp-ui-peek-find-definitions)
+    ([remap xref-find-references] . lsp-ui-peek-find-references)
+
+    :commands lsp-ui-mode)
+
+
+  (use-package lsp-treemacs
+
+    :after
+    (lsp-mode
+     treemacs)
+
+    :custom
+    (lsp-treemacs-sync-mode t)
+
+    :commands lsp-treemacs-errors-list)
+
+
+  (use-package dap-mode
+
+    :after
+    (lsp-mode)
+
+    :config
+    (enable dap-mode)
+    (enable dap-ui-mode)
+    (enable dap-ui-controls-mode)
+    (enable dap-auto-configure-mode))
 #+end_src
