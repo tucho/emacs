@@ -37,6 +37,7 @@
   - [[corfu][corfu]]
 - [[Project/workspace management and navigation][Project/workspace management and navigation]]
   - [[treemacs][treemacs]]
+  - [[projectile][projectile]]
 - [[Version control][Version control]]
   - [[git][git]]
 - [[Programming][Programming]]
@@ -578,6 +579,23 @@ org-bullets gives us attractive bullets rather than asterisks.
     :after
     (treemacs
      magit))
+#+end_src
+
+** projectile
+
+#+begin_src emacs-lisp
+  (use-package projectile
+
+    :init
+    (enable projectile-mode)
+
+    :bind
+    (:map projectile-mode-map
+          ("C-c p" . projectile-command-map))
+
+    :custom
+    (projectile-cleanup-known-projects t)
+    (projectile-enable-caching t))
 #+end_src
 
 * Version control
